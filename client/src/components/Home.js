@@ -4,13 +4,12 @@ import { useSelector, useDispatch } from 'react-redux';
 import { setCurrentUser, selectCurrentUser } from '../redux/userSlice';
 import TopBar from './TopBar/TopBar';
 import HomeJumbotron from './HomeJumbotron';
+import TopHeadlines from './TopHeadlines';
 
 export default function Home() {
   const [loginStatus, setLoginStatus] = useState();
   const dispatch = useDispatch();
   let currentUser = useSelector(selectCurrentUser);
-
-
 
   // upon login status change, conditionally render home page
   useEffect(() => {
@@ -38,6 +37,7 @@ export default function Home() {
     <>
       <TopBar />
       <HomeJumbotron />
+      <TopHeadlines />
     </>
   )
 }
