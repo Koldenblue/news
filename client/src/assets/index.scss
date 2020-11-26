@@ -1,5 +1,20 @@
 $main: grey;
 
+.col-1, .col-2, .col-3 {
+  border-color: black;
+  border-style: solid;
+  border-bottom-width: 3px;
+}
+
+.col-1, .col-2 {
+  border-right-width: 3px;
+}
+
+.col-2, .col-3 {
+  border-left-width: 3px;
+}
+
+
 .loginSignupContainer {
   margin-top: 2em;
   position: relative;
@@ -7,10 +22,6 @@ $main: grey;
 
 .signupLoginBtns {
   margin: 2px;
-}
-
-.home {
-  margin: 0 auto;
 }
 
 .topbar {
