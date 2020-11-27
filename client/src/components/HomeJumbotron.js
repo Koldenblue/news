@@ -8,7 +8,7 @@ export default function HomeJumbotron() {
       <Container>
         <h1 className='jumbo-header'>NEWS</h1>
         <p className='jumbo-sub'>
-          Welcome to your one-stop news source.
+          Welcome to the news of the world.
     </p>
       </Container>
     </Jumbotron>

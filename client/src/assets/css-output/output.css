@@ -2,7 +2,7 @@
   margin: 2px;
 }
 
-/* -------------- top bar -------------- */
+/*================ top bar================ */
 .topbar {
   width: 100%;
   background-color: slategray;
@@ -31,8 +31,12 @@
   display: inline-flex;
 }
 
-/* ------------------------- */
-/* jumbotron */
+.search-form {
+  display: inline-block;
+}
+
+/* ======================================= */
+/* ============== jumbotron ============== */
 .jumbo-header, .jumbo-sub, .headlines-header {
   margin: 0 auto;
   max-width: max-content;
@@ -47,20 +51,24 @@
   font-size: larger;
 }
 
-/* ------------------------- */
+/* ======================================= */
 /* articles */
 .col-one, .col-two, .col-three {
   border-color: black;
   border-style: solid;
-  border-bottom-width: 3px;
+  border-width: 0 0 5px 0;
 }
 
-.col-one, .col-two {
-  border-right-width: 3px;
-}
-
-.col-two, .col-three {
-  border-left-width: 3px;
+.col-three:before, .col-two:before {
+  z-index: -1;
+  content: "";
+  display: inline;
+  width: 100%;
+  height: 90%;
+  top: 5%;
+  border-left: 5px solid grey;
+  position: absolute;
+  left: 0;
 }
 
 .article-img, .article a {

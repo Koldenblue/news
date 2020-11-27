@@ -8,7 +8,23 @@ require("dotenv").config();
 router.get('/news/topheadlines', (req, res) => {
   let queryUrl = 'http://newsapi.org/v2/top-headlines?' + 'country=us&' + 'apiKey=' + process.env.NEWSAPIKEY;
   axios.get(queryUrl).then(data => {
-    console.log(data);
+    // console.log(data);
+    res.json(data.data)
+  }).catch(err => {
+    console.error(err);
+    res.json('News server not available.')
+  })
+})
+
+router.get('/news/search/:searchterm', (req, res) => {
+  console.log(req.params.searchterm);
+  let queryUrl = 'http://newsapi.org/v2/everything?'
+  + 'q=' + req.params.searchterm
+  + '&from=2020-11-26'
+  + '&sortBy=popularity'
+  + '&apiKey='
+  + process.env.NEWSAPIKEY;
+  axios.get(queryUrl).then(data => {
     res.json(data.data)
   }).catch(err => {
     console.error(err);
