@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Axios from 'axios';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
+import Image from 'react-bootstrap/Image';
 import Col from 'react-bootstrap/Col';
 
 export default function TopHeadlines() {
@@ -35,18 +36,27 @@ export default function TopHeadlines() {
         if (key % 3 === 0) {
           try {
             var articleOne = articles[key];
+            if (articleOne === undefined) {
+              articleOne = blankArticle;
+            }
           }
           catch (err) {
             articleOne = blankArticle;
           }
           try {
             var articleTwo = articles[key + 1];
+            if (articleTwo === undefined) {
+              articleTwo = blankArticle;
+            }
           }
           catch {
             articleTwo = blankArticle;
           }
           try {
             var articleThree = articles[key + 2];
+            if (articleThree === undefined) {
+              articleThree = blankArticle;
+            }
           }
           catch {
             articleThree = blankArticle;
@@ -54,13 +64,16 @@ export default function TopHeadlines() {
           return (
             <Row key={key}>
               <Col md={4} className='article col-1'>
-                {articleOne ? articleOne['title'] : ''}
+                <Image  className='article-img' src={articleOne['urlToImage']} />
+                <h2>{articleOne ? articleOne['title'] : ''}</h2>
               </Col>
               <Col md={4} className='article col-2'>
-                {articleTwo ? articleTwo['title'] : ''}
+                <Image className='article-img'  src={articleTwo['urlToImage']} />
+                <h2>{articleTwo ? articleTwo['title'] : ''}</h2>
               </Col>
               <Col md={4} className='article col-3'>
-                {articleThree ? articleThree['title'] : ''}
+                <Image className='article-img' src={articleThree['urlToImage']} />
+                <h2>{articleThree ? articleThree['title'] : ''}</h2>
               </Col>
             </Row>)
         }
