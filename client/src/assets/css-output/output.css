@@ -81,5 +81,17 @@
 }
 
 /* ------------------------- */
+.footer {
+  background-color: grey;
+  margin: 0 auto;
+  justify-content: center;
+  display: flex;
+  border-top: 1px solid black;
+  padding: 0.25em;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
 
 /*# sourceMappingURL=output.css.map */

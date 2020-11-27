@@ -5,6 +5,7 @@ import { setCurrentUser, selectCurrentUser } from '../redux/userSlice';
 import TopBar from './TopBar/TopBar';
 import HomeJumbotron from './HomeJumbotron';
 import TopHeadlines from './TopHeadlines';
+import Footer from './Footer';
 
 export default function Home() {
   const [loginStatus, setLoginStatus] = useState();
@@ -37,7 +38,8 @@ export default function Home() {
     <>
       <TopBar />
       <HomeJumbotron />
-      <TopHeadlines />
+      {/* <TopHeadlines /> */}
+      <Footer />
     </>
   )
 }
