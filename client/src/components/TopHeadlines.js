@@ -63,20 +63,27 @@ export default function TopHeadlines() {
           }
           return (
             <Row key={key}>
-              <Col md={4} className='article col-1'>
-                <Image  className='article-img' src={articleOne['urlToImage']} />
-                <h2>{articleOne ? articleOne['title'] : ''}</h2>
+              <Col md={4} className='article col-one'>
+                <a className='article-img' href={articleOne['url']}>
+                  <Image href={articleOne['url']} className='article-img' src={articleOne['urlToImage']} />
+                </a>
+                <h3>{articleOne ? articleOne['title'] : ''}</h3>
               </Col>
-              <Col md={4} className='article col-2'>
-                <Image className='article-img'  src={articleTwo['urlToImage']} />
-                <h2>{articleTwo ? articleTwo['title'] : ''}</h2>
+              <Col md={4} className='article col-two'>
+                <a className='article-img' href={articleTwo['url']}>
+                  <Image className='article-img' src={articleTwo['urlToImage']} />
+                </a>
+                <h3>{articleTwo ? articleTwo['title'] : ''}</h3>
               </Col>
-              <Col md={4} className='article col-3'>
-                <Image className='article-img' src={articleThree['urlToImage']} />
-                <h2>{articleThree ? articleThree['title'] : ''}</h2>
+              <Col md={4} className='article col-three'>
+                <a className='article-img' href={articleThree['url']}>
+                  <Image className='article-img' src={articleThree['urlToImage']} />
+                </a>
+                <h3>{articleThree ? articleThree['title'] : ''}</h3>
               </Col>
             </Row>)
         }
+        // return three articles for each row, return null if (i % 3 !== 0)
         else {
           return (
             null
@@ -89,7 +96,7 @@ export default function TopHeadlines() {
 
   return (<>
     <Container>
-      <h1>Top Headlines</h1>
+      <h1 className='headlines-header'>Top Headlines</h1>
       <hr />
       {headlines}
     </Container>

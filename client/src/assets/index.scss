@@ -1,29 +1,12 @@
 $main: grey;
-
-.col-1, .col-2, .col-3 {
-  border-color: black;
-  border-style: solid;
-  border-bottom-width: 3px;
+body {
+  
 }
-
-.col-1, .col-2 {
-  border-right-width: 3px;
-}
-
-.col-2, .col-3 {
-  border-left-width: 3px;
-}
-
-
-.loginSignupContainer {
-  margin-top: 2em;
-  position: relative;
-}
-
 .signupLoginBtns {
   margin: 2px;
 }
 
+/* -------------- top bar -------------- */
 .topbar {
   width: 100%;
   background-color: slategray;
@@ -31,12 +14,6 @@ $main: grey;
   justify-content: flex-end;
   display: flex;
 }
-
-
-.dropdown {
-  display: inline-flex;
-}
-
 .empty-div {
   display: inline-flex;
   flex-grow: 4;
@@ -52,6 +29,52 @@ $main: grey;
   display: inline-block;
 }
 
-.article-img {
-  width: auto;
+.dropdown {
+  display: inline-flex;
 }
+
+/* ------------------------- */
+
+
+/* jumbotron */
+.jumbo-header, .jumbo-sub, .headlines-header {
+  margin: 0 auto;
+  max-width: max-content;
+  font-family: 'Prata', serif;
+}
+.jumbo-header {
+  font-size: 7em;
+}
+.jumbo-sub {
+  font-size: larger;
+}
+
+/* ------------------------- */
+
+
+/* articles */ 
+.col-one, .col-two, .col-three {
+  border-color: black;
+  border-style: solid;
+  border-bottom-width: 3px;
+}
+
+.col-one, .col-two {
+  border-right-width: 3px;
+}
+
+.col-two, .col-three {
+  border-left-width: 3px;
+}
+.article-img, .article a {
+  width: inherit;
+}
+
+.loginSignupContainer {
+  margin-top: 2em;
+  position: relative;
+}
+/* ------------------------- */
+
+
+
