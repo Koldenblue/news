@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react';
+import TopBar from './TopBar/TopBar';
+import Footer from './Footer';
 import Axios from 'axios';
+import HomeJumbotron from './HomeJumbotron';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Image from 'react-bootstrap/Image';
 import Col from 'react-bootstrap/Col';
 
-export default function TopHeadlines() {
+export default function NewsQueryRes() {
   const [headlines, setHeadlines] = useState();
 
   const blankArticle = {
@@ -22,10 +25,22 @@ export default function TopHeadlines() {
     urlToImage: null
   }
 
+  console.log(window.location)
+  // the search term will be in the url leading to this component
+  // let search = window.location.search.slice(3,)
+  let search = window.location.search
+  console.log(search);
+  console.log(window.location)
+  let searchIndex = search.indexOf('?q=')
+  console.log(searchIndex)
+  // make sure search index isn't -1
+  // also find the end of the term
+  // also be wary of ampersands - code is %26
+  search = search.slice(searchIndex + 3,)
+  console.log(search);
+
   useEffect(() => {
-    Axios.get('/api/news/topheadlines').then(data => {
-      console.log(data);
-      // get the articles array
+    Axios.get('/api/news/search/' + search).then(data => {
       let articles = data.data.articles;
       let key = -1;
       // map the articles array to an html grid of rows
@@ -89,15 +104,23 @@ export default function TopHeadlines() {
           )
         }
       }))
+
+    }).catch(err => {
+      console.error(err);
     })
-  }, [])
+  },[])
 
-
-  return (<>
+  return(
+    <>
+    <TopBar />
+    <HomeJumbotron />
+    {/* search results go here */}
     <Container>
-      <h1 className='headlines-header'>Top Headlines</h1>
+      <h1 className='headlines-header'>Search Results for {search}</h1>
       <hr />
       {headlines}
     </Container>
-  </>)
+    <Footer />
+    </>
+  )
 }

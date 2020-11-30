@@ -6,7 +6,9 @@ require("dotenv").config();
 // Routes starting with '/api/'
 
 router.get('/news/topheadlines', (req, res) => {
-  let queryUrl = 'http://newsapi.org/v2/top-headlines?' + 'country=us&' + 'apiKey=' + process.env.NEWSAPIKEY;
+  let queryUrl = 'http://newsapi.org/v2/top-headlines?'
+    + 'country=us&'
+    + 'apiKey=' + process.env.NEWSAPIKEY;
   axios.get(queryUrl).then(data => {
     // console.log(data);
     res.json(data.data)

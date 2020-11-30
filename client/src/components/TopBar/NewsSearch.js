@@ -1,7 +1,10 @@
 import Axios from 'axios';
 import React from 'react';
+import { useHistory } from "react-router-dom";
 
 export default function NewsSearch() {
+  const history = useHistory();
+
   const search = (event) => {
     event.preventDefault();
     console.log("submitted")
@@ -12,9 +15,21 @@ export default function NewsSearch() {
     if (searchTerm === '') {
       return;
     }
-    Axios.get('/api/news/search/' + searchTerm).then(data => {
-      console.log(data);
-    })
+    // Axios.get('/api/news/search/' + searchTerm).then(data => {
+    //   console.log(data);
+    // })
+    let currentLocation = window.location.pathname;
+    let alreadyNews;
+    if (currentLocation === '/news') {
+      alreadyNews = true;
+    }
+    else {
+      alreadyNews = false;
+    }
+    history.push('/news?q=' + searchTerm);
+    if (alreadyNews) {
+      window.location.reload();
+    }
   }
   
   return (

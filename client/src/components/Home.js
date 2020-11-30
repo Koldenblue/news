@@ -38,7 +38,7 @@ export default function Home() {
     <>
       <TopBar />
       <HomeJumbotron />
-      {/* <TopHeadlines /> */}
+      <TopHeadlines />
       <Footer />
     </>
   )

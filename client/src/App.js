@@ -6,6 +6,7 @@ import Signup from './components/LoginSignupPages/Signup';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import axios from 'axios';
 import Home from './components/Home';
+import NewsQueryRes from './components/NewsQueryRes';
 
 function App() {
   const dispatch = useDispatch();
@@ -25,6 +26,10 @@ function App() {
     <div className="App">
       <Router>
         <Switch>
+          <Route path='/news'>
+            <NewsQueryRes />
+          </Route>
+          
           <Route exact path='/'>
             <Home />
           </Route>
