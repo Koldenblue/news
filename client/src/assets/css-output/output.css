@@ -35,6 +35,12 @@
   display: inline-block;
 }
 
+.search-input {
+  height: auto;
+  float: left;
+  margin-top: 0.275rem;
+}
+
 /* ======================================= */
 /* ============== jumbotron ============== */
 .jumbo-header, .jumbo-sub, .headlines-header {
@@ -88,7 +94,8 @@
   display: flex;
   border-top: 1px solid black;
   padding: 0.25em;
-  position: absolute;
+  position: relative;
+  bottom: 0;
   left: 0;
   width: 100%;
 }

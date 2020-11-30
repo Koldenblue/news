@@ -34,8 +34,8 @@ export default function NewsSearch() {
   
   return (
     <form onSubmit={(event) => search(event)} className='search-form'>
-      <input type='text'></input>
-      <button type='submit'>Search</button>
+      <input className='search-input' type='text'></input>
+      <button className='btn-secondary btn dropdown-basic should-log-in' type='submit'>Search</button>
     </form>
   )
 }

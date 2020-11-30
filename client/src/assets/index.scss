@@ -36,6 +36,11 @@ body {
 .search-form {
   display: inline-block;
 }
+.search-input {
+  height: auto;
+  float: left;
+  margin-top: .275rem;
+}
 /* ======================================= */
 
 
@@ -101,10 +106,11 @@ body {
   display: flex;
   border-top: 1px solid black;
   padding: 0.25em;
-  position: absolute;
-  // bottom: 0;
+  position: relative;
+  bottom: 0;
   left: 0;
   width: 100%;
+  // top: 100vh;
 }
 
 
