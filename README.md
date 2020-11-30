@@ -1,4 +1,4 @@
-# MERN and Redux User Authentication Template
+# Top Headlines and News API Search
 
 ![image](https://img.shields.io/badge/license-MIT%20License-green)
 
